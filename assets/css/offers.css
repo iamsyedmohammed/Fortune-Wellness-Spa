@@ -1,0 +1,556 @@
+/* ========================================
+   OFFERS PAGE - SPECIFIC STYLES
+   ======================================== */
+
+/* Import main styles */
+@import url('style.css');
+
+/* ========================================
+   1. OFFERS HERO SECTION
+   ======================================== */
+.offers-page .service-hero {
+  background: var(--gold-gradient);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.offers-page .service-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.offers-page .service-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
+  z-index: 0;
+}
+
+.offers-page .service-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.offers-page .service-hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.offers-page .service-hero h1 i {
+  color: white;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.offers-page .service-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  line-height: 1.6;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ========================================
+   2. OFFERS GRID ENHANCEMENTS
+   ======================================== */
+.offers-page .service-grid {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.offers-page .card {
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(228, 179, 42, 0.15);
+  overflow: hidden;
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid var(--primary);
+  position: relative;
+  color: white;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.offers-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(228, 179, 42, 0.25);
+  border-color: var(--accent);
+}
+
+.offers-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.offers-page .card:hover::before {
+  opacity: 1;
+}
+
+.offers-page .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.offers-page .card:hover img {
+  transform: scale(1.05);
+}
+
+.offers-page .card h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.offers-page .card h3 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(5deg); }
+  75% { transform: scale(1.1) rotate(-5deg); }
+}
+
+.offers-page .card p {
+  padding: 0 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  flex-grow: 1;
+}
+
+.offers-page .card p strong {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.offers-page .card p em {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.offers-page .card .btn-primary {
+  margin: 1rem 1.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-height: 48px;
+  height: 48px;
+  width: calc(100% - 3rem);
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  border: 2px solid var(--primary);
+}
+
+.offers-page .card .btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.offers-page .card .btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(228, 179, 42, 0.4);
+  border-color: var(--primary);
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.offers-page .card .btn-primary:hover::before {
+  left: 0;
+}
+
+.offers-page .card .btn-primary:hover i {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.offers-page .card .btn-primary i {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.offers-page .card .btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* ========================================
+   3. OFFER BANNER SECTION
+   ======================================== */
+.offers-page .offer-banner {
+  text-align: center;
+  background: var(--gold-gradient);
+  color: var(--dark-bg);
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.offers-page .offer-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.offers-page .offer-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.offers-page .offer-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.3);
+  color: var(--dark-bg);
+}
+
+.offers-page .offer-banner h2 i {
+  color: var(--dark-bg);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.offers-page .offer-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+  color: var(--dark-bg);
+}
+
+.offers-page .offer-banner .btn-outline {
+  margin: 2rem auto 0;
+  display: inline-flex;
+  width: fit-content;
+  border: 2px solid var(--dark-bg);
+  color: var(--dark-bg);
+  position: relative;
+  z-index: 1;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  text-decoration: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.offers-page .offer-banner .btn-outline:hover {
+  color: white;
+  border-color: var(--dark-bg);
+  z-index: 2;
+}
+
+.offers-page .offer-banner .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-bg) !important;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.offers-page .offer-banner .btn-outline:hover::before {
+  left: 0;
+}
+
+/* ========================================
+   COUNTDOWN TIMER STYLES
+   ======================================== */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  min-width: 80px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-bg);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  font-family: "Playfair Display", serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  color: var(--dark-bg);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.8;
+}
+
+/* Countdown Timer Responsive */
+@media (max-width: 768px) {
+  .countdown-timer {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .countdown-item {
+    padding: 1rem 0.8rem;
+    min-width: 70px;
+  }
+  
+  .countdown-number {
+    font-size: 2rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    gap: 0.8rem;
+  }
+  
+  .countdown-item {
+    padding: 0.8rem 0.6rem;
+    min-width: 60px;
+  }
+  
+  .countdown-number {
+    font-size: 1.8rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Expired Message */
+.expired-message {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.2);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  animation: pulse 1s infinite;
+}
+
+/* ========================================
+   4. RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .offers-page .service-hero {
+    padding: 4rem 1rem;
+  }
+  
+  .offers-page .service-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .offers-page .service-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .offers-page .service-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .offers-page .card {
+    margin-bottom: 1rem;
+    height: auto;
+  }
+  
+  .offers-page .card img {
+    height: 200px;
+  }
+  
+  .offers-page .card .btn-primary {
+    width: calc(100% - 2rem);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .offers-page .offer-banner {
+    padding: 3rem 1rem;
+  }
+  
+  .offers-page .offer-banner h2 {
+    font-size: 1.8rem;
+  }
+  
+  .offers-page .offer-banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-page .service-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .offers-page .service-hero p {
+    font-size: 1rem;
+  }
+  
+  .offers-page .card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .offers-page .card p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+  
+  .offers-page .offer-banner h2 {
+    font-size: 1.6rem;
+  }
+  
+  .offers-page .offer-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   5. ANIMATION ENHANCEMENTS
+   ======================================== */
+.offers-page .card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.offers-page .card:nth-child(1) { animation-delay: 0.1s; }
+.offers-page .card:nth-child(2) { animation-delay: 0.2s; }
+.offers-page .card:nth-child(3) { animation-delay: 0.3s; }
+.offers-page .card:nth-child(4) { animation-delay: 0.4s; }
+.offers-page .card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   6. SPECIAL STYLING FOR OFFERS PAGE
+   ======================================== */
+body.offers-page {
+  background: var(--dark-bg);
+}
+
+.offers-page .container {
+  max-width: 1400px;
+}
+
+.offers-page .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* ========================================
+   END OF OFFERS STYLES
+   ======================================== */

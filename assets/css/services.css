@@ -1,0 +1,459 @@
+/* ========================================
+   SERVICES PAGE - SPECIFIC STYLES
+   ======================================== */
+
+/* ========================================
+   1. SERVICE HERO SECTION
+   ======================================== */
+.service-hero {
+  background: var(--gold-gradient);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.service-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
+  z-index: 0;
+}
+
+.service-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.service-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  line-height: 1.6;
+}
+
+/* ========================================
+   2. SERVICES GRID ENHANCEMENTS
+   ======================================== */
+.services-page .service-grid {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.services-page .card {
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(228, 179, 42, 0.15);
+  overflow: hidden;
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid var(--primary);
+  position: relative;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.services-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(228, 179, 42, 0.25);
+  border-color: var(--accent);
+}
+
+.services-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.services-page .card:hover::before {
+  opacity: 1;
+}
+
+.services-page .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.services-page .card:hover img {
+  transform: scale(1.05);
+}
+
+.services-page .card h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.services-page .card p {
+  padding: 0 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.services-page .card p strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.services-page .card .btn-outline {
+  margin: 1rem 1.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.services-page .card .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.services-page .card .btn-outline:hover {
+  color: white;
+  border-color: var(--primary);
+}
+
+.services-page .card .btn-outline:hover::before {
+  left: 0;
+}
+
+/* ========================================
+   3. RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .service-hero {
+    padding: 4rem 1rem;
+  }
+  
+  .service-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .service-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .services-page .service-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .services-page .card {
+    margin-bottom: 1rem;
+  }
+  
+  .services-page .card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .service-hero p {
+    font-size: 1rem;
+  }
+  
+  .services-page .card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .services-page .card p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+/* ========================================
+   4. ANIMATION ENHANCEMENTS
+   ======================================== */
+.services-page .card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.services-page .card:nth-child(1) { animation-delay: 0.1s; }
+.services-page .card:nth-child(2) { animation-delay: 0.2s; }
+.services-page .card:nth-child(3) { animation-delay: 0.3s; }
+.services-page .card:nth-child(4) { animation-delay: 0.4s; }
+.services-page .card:nth-child(5) { animation-delay: 0.5s; }
+.services-page .card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   5. SPECIAL STYLING FOR SERVICES PAGE
+   ======================================== */
+body.services-page {
+  background: var(--dark-bg);
+}
+
+.services-page .container {
+  max-width: 1400px;
+}
+
+.services-page .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* ========================================
+   6. SERVICES CTA SECTION
+   ======================================== */
+.services-cta {
+  background: var(--gold-gradient);
+  padding: 4rem 1rem;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.services-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cta-content h2 i {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn-primary,
+.cta-buttons .btn-outline {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  min-width: 200px;
+  min-height: 56px;
+  height: 56px;
+  vertical-align: top;
+}
+
+.cta-buttons .btn-primary {
+  background: white;
+  color: var(--dark-bg);
+}
+
+.cta-buttons .btn-primary:hover {
+  background: var(--light-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.cta-buttons .btn-outline {
+  border: 2px solid white;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buttons .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.cta-buttons .btn-outline:hover {
+  color: var(--dark-bg);
+  border-color: white;
+}
+
+.cta-buttons .btn-outline:hover::before {
+  left: 0;
+}
+
+.cta-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.feature-item i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   7. CTA RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .services-cta {
+    padding: 3rem 1rem;
+  }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-content p {
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-outline {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    min-height: 52px;
+    height: 52px;
+  }
+  
+  .cta-features {
+    gap: 2rem;
+  }
+  
+  .feature-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-features {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ========================================
+   END OF SERVICES STYLES
+   ======================================== */

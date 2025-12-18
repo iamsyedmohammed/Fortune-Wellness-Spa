@@ -1,0 +1,542 @@
+/* ========================================
+   REVIEWS PAGE - SPECIFIC STYLES
+   ======================================== */
+
+/* Import main styles */
+@import url('style.css');
+
+/* ========================================
+   1. REVIEWS HERO SECTION
+   ======================================== */
+.reviews-page .service-hero {
+  background: var(--gold-gradient);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-page .service-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.reviews-page .service-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
+  z-index: 0;
+}
+
+.reviews-page .service-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.reviews-page .service-hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.reviews-page .service-hero h1 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.reviews-page .service-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  line-height: 1.6;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ========================================
+   2. REVIEWS GRID LAYOUT
+   ======================================== */
+.reviews-page .service-hero .container,
+.reviews-page .reviews-page .container,
+.reviews-page .review-cta .container,
+.reviews-page .offer-banner .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.review-card {
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 2px solid var(--primary);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(228, 179, 42, 0.15);
+}
+
+.review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(228, 179, 42, 0.25);
+}
+
+.review-card:hover::before {
+  transform: scaleX(1);
+}
+
+.review-card .stars {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.review-card .stars i {
+  animation: sparkle 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(5deg); }
+  75% { transform: scale(1.1) rotate(-5deg); }
+}
+
+.quote-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.quote-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.review-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+  padding-left: 1.5rem;
+}
+
+.quote-icon-right {
+  color: var(--primary);
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* ========================================
+   4. VIEW ALL REVIEWS SECTION
+   ======================================== */
+.view-all-reviews {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.view-all-reviews .btn-outline {
+  background: transparent;
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 2px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.view-all-reviews .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.view-all-reviews .btn-outline:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-color: var(--primary);
+  z-index: 2;
+}
+
+.view-all-reviews .btn-outline:hover::before {
+  left: 0;
+}
+
+.view-all-reviews .btn-outline:hover i {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.view-all-reviews .btn-outline i {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.review-card h4 {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========================================
+   3. REVIEW CTA SECTION
+   ======================================== */
+.review-cta {
+  text-align: center;
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  border: 2px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.review-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.review-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.review-cta h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.review-cta h2 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.review-cta p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-cta .btn-primary,
+.review-cta .btn-outline {
+  margin: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 56px;
+  height: 56px;
+  justify-content: center;
+  vertical-align: top;
+}
+
+/* ========================================
+   4. CTA BANNER SECTION
+   ======================================== */
+.reviews-page .offer-banner {
+  text-align: center;
+  background: var(--gold-gradient);
+  color: white;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-page .offer-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.reviews-page .offer-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(228, 179, 42, 0.8) 0%, rgba(244, 196, 48, 0.9) 50%, rgba(196, 155, 31, 0.8) 100%);
+  z-index: 0;
+}
+
+.reviews-page .offer-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reviews-page .offer-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.reviews-page .offer-banner h2 i {
+  color: white;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.reviews-page .offer-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: white;
+  font-weight: 400;
+}
+
+.reviews-page .offer-banner .btn-outline {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.reviews-page .offer-banner .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.reviews-page .offer-banner .btn-outline:hover {
+  color: var(--dark-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-color: white;
+  z-index: 2;
+}
+
+.reviews-page .offer-banner .btn-outline:hover::before {
+  left: 0;
+}
+
+.reviews-page .offer-banner .btn-outline:hover i {
+  color: var(--dark-bg);
+  transition: all 0.3s ease;
+}
+
+.reviews-page .offer-banner .btn-outline i {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   5. RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .reviews-page .service-hero {
+    padding: 3rem 1rem;
+  }
+  
+  .reviews-page .service-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .reviews-page .service-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .reviews-page .service-hero .container,
+  .reviews-page .reviews-page .container,
+  .reviews-page .review-cta .container,
+  .reviews-page .offer-banner .container {
+    padding: 3rem 1rem;
+  }
+  
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+  }
+  
+  .review-cta {
+    padding: 2rem 1rem;
+  }
+  
+  .review-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .review-cta p {
+    font-size: 1rem;
+  }
+  
+  .review-cta .btn-primary,
+  .review-cta .btn-outline {
+    min-height: 52px;
+    height: 52px;
+    margin: 0.3rem;
+  }
+  
+  .reviews-page .offer-banner {
+    padding: 3rem 1rem;
+  }
+  
+  .reviews-page .offer-banner h2 {
+    font-size: 1.8rem;
+  }
+  
+  .reviews-page .offer-banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-page .service-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .reviews-page .service-hero p {
+    font-size: 1rem;
+  }
+  
+  .review-card {
+    padding: 1.2rem;
+  }
+  
+  .review-card p {
+    font-size: 0.95rem;
+  }
+  
+  .review-cta h2 {
+    font-size: 1.6rem;
+  }
+  
+  .review-cta p {
+    font-size: 0.95rem;
+  }
+  
+  .reviews-page .offer-banner h2 {
+    font-size: 1.6rem;
+  }
+  
+  .reviews-page .offer-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   6. SPECIAL STYLING FOR REVIEWS PAGE
+   ======================================== */
+body.reviews-page {
+  background: var(--dark-bg);
+}
+
+/* ========================================
+   END OF REVIEWS STYLES
+   ======================================== */

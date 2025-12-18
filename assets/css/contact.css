@@ -1,0 +1,614 @@
+/* ========================================
+   CONTACT PAGE - SPECIFIC STYLES
+   ======================================== */
+
+/* Import main styles */
+@import url('style.css');
+
+/* ========================================
+   1. CONTACT HERO SECTION
+   ======================================== */
+.contact-page .service-hero {
+  background: var(--gold-gradient);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page .service-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.contact-page .service-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0.7) 100%);
+  z-index: 0;
+}
+
+.contact-page .service-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page .service-hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-weight: 700;
+}
+
+.contact-page .service-hero h1 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.contact-page .service-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  line-height: 1.6;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ========================================
+   2. CONTACT INFO SECTION
+   ======================================== */
+.contact-page .service-hero .container,
+.contact-page .contact-section .container,
+.contact-page .map-section .container,
+.contact-page .form-section .container,
+.contact-page .offer-banner .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.contact-section {
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 32px rgba(228, 179, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.contact-info > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+
+.contact-info h2 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.contact-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-box {
+  background: var(--dark-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  min-height: 80px;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(228, 179, 42, 0.3);
+}
+
+.contact-icon {
+  background: var(--gold-gradient);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.contact-content h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-content a,
+.contact-content span {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: block;
+}
+
+.contact-content a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cta-group .btn-primary,
+.cta-group .btn-outline {
+  min-height: 56px;
+  height: 56px;
+  justify-content: center;
+  vertical-align: top;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ========================================
+   3. MAP SECTION
+   ======================================== */
+.map-section {
+  margin-bottom: 3rem;
+}
+
+.map-section h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+
+.map-section h2 i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.map-section p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(228, 179, 42, 0.15);
+  border: 2px solid var(--primary);
+}
+
+.map-container iframe {
+  border: none;
+  width: 100%;
+  height: 350px;
+}
+
+/* ========================================
+   4. CTA BANNER SECTION
+   ======================================== */
+.contact-page .offer-banner {
+  text-align: center;
+  background: var(--gold-gradient);
+  color: white;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-page .offer-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.contact-page .offer-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(228, 179, 42, 0.8) 0%, rgba(244, 196, 48, 0.9) 50%, rgba(196, 155, 31, 0.8) 100%);
+  z-index: 0;
+}
+
+.contact-page .offer-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page .offer-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.contact-page .offer-banner h2 i {
+  color: white;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.contact-page .offer-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: white;
+  font-weight: 400;
+}
+
+.contact-page .offer-banner .btn-outline {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-page .offer-banner .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.contact-page .offer-banner .btn-outline:hover {
+  color: var(--dark-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-color: white;
+  z-index: 2;
+}
+
+.contact-page .offer-banner .btn-outline:hover::before {
+  left: 0;
+}
+
+.contact-page .offer-banner .btn-outline:hover i {
+  color: var(--dark-bg);
+  transition: all 0.3s ease;
+}
+
+.contact-page .offer-banner .btn-outline i {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   6. RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .contact-page .service-hero {
+    padding: 3rem 1rem;
+  }
+  
+  .contact-page .service-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .contact-page .service-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .contact-page .service-hero .container,
+  .contact-page .contact-section .container,
+  .contact-page .map-section .container,
+  .contact-page .offer-banner .container {
+    padding: 3rem 1rem;
+  }
+  
+  .contact-info {
+    padding: 2rem 1rem;
+    margin: 0 1rem;
+    border-radius: 15px;
+  }
+  
+  .contact-info h2,
+  .map-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-boxes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  
+  .contact-box {
+    padding: 1.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.2rem;
+    min-height: 90px;
+    touch-action: manipulation;
+  }
+  
+  .contact-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+  
+  .contact-icon i {
+    font-size: 1.4rem;
+  }
+  
+  .contact-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .contact-content a,
+  .contact-content span {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-group .btn-primary,
+  .cta-group .btn-outline {
+    min-height: 52px;
+    height: 52px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contact-page .offer-banner {
+    padding: 3rem 1rem;
+  }
+  
+  .contact-page .offer-banner h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-page .offer-banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page .service-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-page .service-hero p {
+    font-size: 1rem;
+  }
+  
+  .contact-info h2,
+  .map-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-boxes {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 1.5rem auto;
+  }
+  
+  .contact-box {
+    padding: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+    min-height: 120px;
+    touch-action: manipulation;
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .contact-icon i {
+    font-size: 1.3rem;
+  }
+  
+  .contact-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .contact-content a,
+  .contact-content span {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .cta-group {
+    margin-top: 2rem;
+  }
+  
+  .cta-group .btn-primary,
+  .cta-group .btn-outline {
+    min-height: 50px;
+    height: 50px;
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.95rem;
+  }
+  
+  .contact-page .offer-banner h2 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-page .offer-banner p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-info {
+    padding: 1.5rem 0.8rem;
+    margin: 0 0.5rem;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.4rem;
+  }
+  
+  .contact-boxes {
+    gap: 0.8rem;
+    max-width: 350px;
+    margin: 1.5rem auto;
+  }
+  
+  .contact-box {
+    padding: 1rem;
+    gap: 0.8rem;
+    min-height: 110px;
+    touch-action: manipulation;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .contact-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .contact-content h4 {
+    font-size: 1rem;
+  }
+  
+  .contact-content a,
+  .contact-content span {
+    font-size: 0.9rem;
+  }
+  
+  .cta-group .btn-primary,
+  .cta-group .btn-outline {
+    min-height: 48px;
+    height: 48px;
+    max-width: 260px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================
+   7. SPECIAL STYLING FOR CONTACT PAGE
+   ======================================== */
+body.contact-page {
+  background: var(--dark-bg);
+}
+
+/* ========================================
+   END OF CONTACT STYLES
+   ======================================== */
